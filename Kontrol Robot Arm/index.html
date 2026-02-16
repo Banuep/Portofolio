@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Arm Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <h1>4 DOF ROBOT ARM CONTROL</h1>
+        
+        <div class="control-panel">
+            <div class="robot-visualization">
+                <!-- Tempat untuk visualisasi robot -->
+            </div>
+            
+            <div class="control-interface">
+                <div class="joint">
+                    <h3>Base Rotation</h3>
+                    <div class="slider-container">
+                        <input type="range" min="0" max="180" value="90" class="slider" id="base">
+                        <div class="angle-display">
+                            <span>0°</span>
+                            <span id="base-angle">90°</span>
+                            <span>180°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="joint">
+                    <h3>Shoulder</h3>
+                    <div class="slider-container">
+                        <input type="range" min="0" max="180" value="90" class="slider" id="shoulder">
+                        <div class="angle-display">
+                            <span>0°</span>
+                            <span id="shoulder-angle">90°</span>
+                            <span>180°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="joint">
+                    <h3>Elbow</h3>
+                    <div class="slider-container">
+                        <input type="range" min="0" max="180" value="90" class="slider" id="elbow">
+                        <div class="angle-display">
+                            <span>0°</span>
+                            <span id="elbow-angle">90°</span>
+                            <span>180°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="joint">
+                    <h3>Gripper</h3>
+                    <div class="slider-container">
+                        <input type="range" min="0" max="180" value="90" class="slider" id="gripper">
+                        <div class="angle-display">
+                            <span>0°</span>
+                            <span id="gripper-angle">90°</span>
+                            <span>180°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preset-buttons">
+                    <button onclick="setPreset('home')">Home Position</button>
+                    <button onclick="setPreset('pick')">Pick Object</button>
+                    <button onclick="setPreset('release')">Release Object</button>
+                    <button class="emergency-stop" onclick="emergencyStop()">⛔ Emergency Stop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
