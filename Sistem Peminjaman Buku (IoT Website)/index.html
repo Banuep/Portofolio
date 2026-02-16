@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Peminjaman Buku RFID</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Dashboard Peminjaman Buku RFID</h1>
+    </div>
+    
+    <div class="container">
+        <div class="card add-card">
+            <h2>Tambah Buku Baru</h2>
+            <div class="form-group">
+                <label for="uidBuku">UID Buku</label>
+                <input type="text" id="uidBuku" placeholder="Contoh: 0A1B2C3D" required>
+            </div>
+            <div class="form-group">
+                <label for="namaBuku">Nama Buku</label>
+                <input type="text" id="namaBuku" placeholder="Contoh: Dasar-Dasar IoT" required>
+            </div>
+            <button id="tambahBukuBtn">Tambah Buku</button>
+            <p id="message"></p>
+        </div>
+
+        <div class="card list-card">
+            <h2>Daftar Buku</h2>
+            <table id="daftarBukuTable">
+                <thead>
+                    <tr>
+                        <th>UID</th>
+                        <th>Nama Buku</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="card full-width">
+            <h2>Riwayat Peminjaman</h2>
+            <table id="riwayatPeminjamanTable">
+                <thead>
+                    <tr>
+                        <th>Nama Buku</th>
+                        <th>Keterangan</th>
+                        <th>Waktu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
